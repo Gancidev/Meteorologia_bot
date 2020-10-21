@@ -12,9 +12,10 @@ Una volta che l'utente manda il comando per settare la città crea un file per s
 
 # Implementazione
 Per la realizzazione è stata utilizzata la libreria telepot e le API di OpenWeatherMap che vengono richiamate da una seconda libreria requests, la risposta alle richieste è un json che viene analizzato con la libreria Json.
+Il linguaggio utilizzato è il Python.
 
 # Telepot
-Una Libreria per Python che permette di gestire attraverso se stessa un bot di telegram fornendo delle funzioni che si appoggiano alle API di telegram stesso.
+Una Libreria che permette di gestire attraverso se stessa un bot di telegram fornendo delle funzioni che si appoggiano alle API di telegram stesso.
 E' stata utilizzata per la gestione dei messaggi che un utente e il bot scambiano.
 
 # API OpenWeatherMap e requests
@@ -31,4 +32,4 @@ Fatti i dovuti cambiamenti basterà eseguire lo script python e il bot è pronto
 Per rendere il bot sempre attivo senza dover avere una sessione aperta sul pc remoto si può trasformare lo script in un servizio linux mediante la seguente guida: https://github.com/torfsen/python-systemd-tutorial
 
 # Test
-E' possibile testare il codice contattando il bot su telegram al nick: @Meteorologia_Bot
+E' possibile testare il funzionamento contattando il bot su telegram al nick: @Meteorologia_Bot
