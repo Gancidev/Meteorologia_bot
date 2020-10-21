@@ -11,7 +11,7 @@ Bot che permette di visionare le condizioni meteo di una qualunque(o quasi) citt
 
 # Implementazione
 
-Per la realizzazione è stata utilizzata la libreria telepot e le API di OpenWeatherMap che vengono richiamate da una seconda libreria requests.
+Per la realizzazione è stata utilizzata la libreria telepot e le API di OpenWeatherMap che vengono richiamate da una seconda libreria requests, la risposta alle richieste è un json che viene analizzato con la libreria Json.
 
 # Telepot
 
