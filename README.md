@@ -24,5 +24,15 @@ Le API di OpenWeatherMap sono gratuite e disponibili apertamente a chiunque, bas
 Le API sono richiamate attraverso il metodo GET del protocollo HTTP, quindi richiamando un semplice url al quale si passano i parametri quali: Città di interesse, Stato, linguaggio della risposta, unità di misura.
 Le risposte hanno un codice di ritorno che indicano com'è andata la richiesta.
 
+# Json
+
+La libreria viene utilizzata per interpretare la risposta Json mandata dalle API.
+
+# Installazione e Utilizzo
+
+Per usufruire del bot è necessario inserire il percorso in cui esso potrà salvare i propri file di configurazione (dovuto alla città di default che ogni utente inserisce), inserire la propria API TOKEN di OpenWeatherMap e in fine aggiungere il TOKEN del bot che si può facilmente ottenere tramite il BotFather (Nick: @BotFather).
+Fatti i dovuti cambiamenti basterà eseguire lo script python e il bot è pronto.
+Per rendere il bot sempre attivo senza dover avere una sessione aperta sul pc remoto si può trasformare lo script in un servizio linux mediante la seguente guida: https://github.com/torfsen/python-systemd-tutorial
+
 # Test
 E' possibile testare il codice contattando il bot su telegram al nick: @Meteorologia_Bot
