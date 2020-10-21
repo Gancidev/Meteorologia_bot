@@ -9,7 +9,8 @@ import requests
 import json
 
 def handle(msg):
-    percorso="/home/pino/ftp/meteo_bot/"
+    #percorso alla cartella dedicata al bot (di cui ha bisogno per salvare i settaggi)
+    percorso="/home/user/path/meteo_bot/"
     content_type, chat_type, chat_id = telepot.glance(msg)
     print ("\n")
     pprint(msg)
@@ -18,7 +19,7 @@ def handle(msg):
         bot.sendMessage(chat_id,"Benvenuto nel Meteorologia_Bot, il bot che ti fornisce le previsioni meteo in tempo Reale.")
 
     elif msg['text'][:12]=='/setta_citta':
-        r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+msg['text'][13:]+',IT&lang=IT&units=metric&appid=3fa197a12f6c6a4f60db9950ed44d24a')
+        r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+msg['text'][13:]+',IT&lang=IT&units=metric&appid={INSERT YOUR API TOKEN}')
         x=r.text
         y=json.loads(x)
         if y['cod']==200:
@@ -39,7 +40,7 @@ def handle(msg):
             try:
                 file=open(percorso+'info/'+str(chat_id)+'.txt','r')
                 citta_settata=file.read()
-                r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+citta_settata+',IT&lang=IT&units=metric&appid=3fa197a12f6c6a4f60db9950ed44d24a')
+                r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+citta_settata+',IT&lang=IT&units=metric&appid={INSERT YOUR API TOKEN}')
                 x=r.text
                 y=json.loads(x)
                 testo="Previsioni per "+y['name']+":\n"
@@ -53,7 +54,7 @@ def handle(msg):
                 bot.sendMessage(chat_id,"Per poter utilizzare il comando /previsioni senza specificare una citta' devi prima settarne una con il comando /setta_citta {nome_citta'}")
 
         else:
-            r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+msg['text'][12:]+',IT&lang=IT&units=metric&appid=3fa197a12f6c6a4f60db9950ed44d24a')
+            r=requests.get('http://api.openweathermap.org/data/2.5/weather?q='+msg['text'][12:]+',IT&lang=IT&units=metric&appid={INSERT YOUR API TOKEN}')
             x=r.text
             y=json.loads(x)
             testo="Previsioni per "+y['name']+":\n"
@@ -66,7 +67,7 @@ def handle(msg):
     else:
         bot.sendMessage(chat_id,"Non sono riuscito a interpretare il comando, usa /help per sapere come utilizzarmi")
 
-TOKEN = '1270796768:AAGWeUhKb1-Rfdw8uawrPCDDMxT3xxkUUPw'
+TOKEN = '{INSERT YOUR TELEGRAM BOT TOKEN}'
 
 bot = telepot.Bot(TOKEN)
 MessageLoop(bot, handle).run_as_thread()
